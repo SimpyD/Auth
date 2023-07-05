@@ -1,0 +1,9 @@
+Here's a general approach for extracting the token from a JSON response:
+
+Parse the response body as JSON: If the response body is in JSON format, you need to parse it into a JSON object or a similar data structure that allows you to access its properties. You can use a JSON library like Gson, Jackson, or the built-in org.json package in Java.
+
+Traverse the JSON structure: Once you have the parsed JSON object, navigate through its properties to reach the token. This requires understanding the structure of the response JSON and the specific key or path where the token is located. You may need to access nested objects or arrays to retrieve the token value.
+
+Extract the token value: Once you reach the appropriate property or key, extract its value, which represents the token. The method for extracting the value depends on the JSON library you are using. For example, with Gson, you can use the appropriate methods to access the desired property and extract its value.
+
+In this example, we assume that the response JSON contains a property named "token" which holds the token value. Adjust the code based on the actual structure of your response JSON and the specific key or path to the token.

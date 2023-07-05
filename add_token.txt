@@ -1,0 +1,24 @@
+public class APICallClass {
+    private TokenRetrievalComponent tokenRetrievalComponent;
+    private String token;
+
+    public APICallClass(TokenRetrievalComponent tokenRetrievalComponent) {
+        this.tokenRetrievalComponent = tokenRetrievalComponent;
+    }
+
+    public void makeAPICall() {
+        if (token == null || isTokenExpired()) {
+            token = tokenRetrievalComponent.getToken();
+        }
+
+        // Make the API call using the token
+        // ...
+    }
+
+    private boolean isTokenExpired() {
+        // Check if the token is expired
+        // ...
+
+        // Return true if the token is expired, false otherwise
+    }
+}

@@ -1,0 +1,5 @@
+In this example, the APICallClass has a method called makeAPICall() that is responsible for making the API call. Inside this method, we check if the token is null or if it is expired by calling the isTokenExpired() method. If the token is null or expired, we retrieve a new token from the tokenRetrievalComponent using the getToken() method.
+
+By checking the token validity before each API call, you ensure that you have a valid token at the time of the API call. This approach allows you to handle token expiration or refreshing as needed, providing more flexibility and control over token management.
+
+You can invoke the makeAPICall() method whenever you need to make an API call, and it will automatically handle the token retrieval and usage.

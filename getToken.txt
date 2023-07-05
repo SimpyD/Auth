@@ -1,0 +1,27 @@
+Certainly! Let's go through the code step by step to understand how it works:
+
+First, we import the necessary classes and libraries required for making HTTP requests and handling responses.
+
+Inside the main method, we define the authentication URL, username, and password.
+
+We create an instance of CloseableHttpClient using HttpClients.createDefault(). This creates a default configuration for the HTTP client.
+
+We create an HttpPost object and set the URL to the authentication endpoint using new HttpPost(authUrl).
+
+We set the "Content-Type" header of the request to "application/json" using httpPost.setHeader("Content-Type", "application/json"). This informs the server that we are sending JSON data in the request body.
+
+We construct the JSON payload by concatenating the username and password variables into a JSON string: String payload = "{\"username\":\"" + username + "\", \"password\":\"" + password + "\"}".
+
+We set the payload as the entity of the HttpPost object using httpPost.setEntity(new StringEntity(payload)). This attaches the JSON payload to the request body.
+
+We execute the HTTP request using httpClient.execute(httpPost), which sends the request to the authentication endpoint and returns an HttpResponse object.
+
+We retrieve the response entity using response.getEntity(). The entity represents the response content, which may include the web token.
+
+We check the status code of the response using response.getStatusLine().getStatusCode(). If it is 200 (indicating a successful request) and the entity is not null, we can handle the response body.
+
+We convert the response entity (if available) to a string using EntityUtils.toString(entity). This gives us the response body, which can be further processed or extracted to obtain the web token.
+
+If there is an error during the request or the response status code is not 200, we handle the authentication error or other error conditions accordingly.
+
+Any exceptions that occur during the process are caught in the catch block, and you can handle them appropriately (e.g., logging the error or displaying a message).
